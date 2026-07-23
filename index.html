@@ -2911,6 +2911,439 @@
         transition-duration: .12s !important;
       }
     }
+    /* StudyBite scroll container animation - static GitHub-ready version of the requested shadcn/framer component. */
+    .sb-scroll-showcase {
+      --sb-scroll-rotate: 20deg;
+      --sb-scroll-scale: 1.05;
+      --sb-scroll-translate: 0px;
+      min-height: clamp(620px, 92vh, 900px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(28px, 6vw, 80px) clamp(14px, 4vw, 52px);
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+    .sb-scroll-showcase::before {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 107, 44, .24), transparent 60%);
+      filter: blur(18px);
+      z-index: -1;
+    }
+    .sb-scroll-inner {
+      width: min(1060px, 100%);
+      perspective: 1000px;
+    }
+    .sb-scroll-title {
+      max-width: 780px;
+      margin: 0 auto 34px;
+      text-align: center;
+      transform: translateY(var(--sb-scroll-translate));
+      will-change: transform;
+    }
+    .sb-scroll-title span {
+      color: #ff6b2c;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .sb-scroll-title h2 {
+      margin: 10px 0 12px;
+      color: var(--text, #fff7ef);
+      font-size: clamp(34px, 7vw, 78px);
+      line-height: .96;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .sb-scroll-title p {
+      margin: 0 auto;
+      max-width: 640px;
+      color: var(--muted, rgba(255, 247, 239, .72));
+      font-weight: 700;
+      line-height: 1.55;
+    }
+    .sb-scroll-device {
+      width: min(1040px, 100%);
+      height: clamp(410px, 54vw, 620px);
+      margin: 0 auto;
+      padding: clamp(8px, 1.8vw, 22px);
+      border: 4px solid rgba(108, 108, 108, .92);
+      border-radius: 30px;
+      background: #222;
+      transform: rotateX(var(--sb-scroll-rotate)) scale(var(--sb-scroll-scale));
+      transform-origin: top center;
+      box-shadow: 0 9px 20px rgba(0,0,0,.29), 0 37px 37px rgba(0,0,0,.26), 0 84px 50px rgba(0,0,0,.15);
+      will-change: transform;
+    }
+    .sb-scroll-screen {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 107, 44, .28);
+      background: linear-gradient(135deg, rgba(255,255,255,.12), transparent 28%), radial-gradient(circle at 86% 18%, rgba(255, 107, 44, .32), transparent 24%), rgba(5, 5, 5, .92);
+    }
+    .sb-scroll-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: clamp(14px, 2vw, 22px);
+      color: #fff7ef;
+      font-weight: 900;
+    }
+    .sb-scroll-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b2c, #ff2f1f);
+      box-shadow: 0 12px 34px rgba(255, 107, 44, .38);
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .sb-scroll-pill {
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      color: rgba(255,247,239,.78);
+      font-size: 12px;
+    }
+    .sb-scroll-grid {
+      height: calc(100% - 70px);
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: clamp(14px, 2.4vw, 26px);
+      padding: 0 clamp(14px, 2vw, 22px) clamp(16px, 2vw, 22px);
+    }
+    .sb-scroll-hero,
+    .sb-scroll-panel,
+    .sb-scroll-card {
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.04));
+      border-radius: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+    }
+    .sb-scroll-hero {
+      display: grid;
+      align-content: end;
+      padding: clamp(18px, 3vw, 34px);
+    }
+    .sb-scroll-hero h3 {
+      margin: 0;
+      color: #fff7ef;
+      font-size: clamp(32px, 5vw, 64px);
+      line-height: .95;
+      font-weight: 950;
+    }
+    .sb-scroll-hero h3 span,
+    .sb-scroll-card strong {
+      color: #ff6b2c;
+    }
+    .sb-scroll-hero p,
+    .sb-scroll-card span {
+      color: rgba(255,247,239,.74);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+    .sb-scroll-panel {
+      display: grid;
+      gap: 12px;
+      padding: clamp(14px, 2vw, 22px);
+    }
+    .sb-scroll-card {
+      padding: 16px;
+    }
+    .sb-scroll-card strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+    body:not(.dark-mode) .sb-scroll-title h2,
+    body:not(.dark-mode) .sb-scroll-top,
+    body:not(.dark-mode) .sb-scroll-hero h3 {
+      color: #1b120d;
+    }
+    body:not(.dark-mode) .sb-scroll-title p,
+    body:not(.dark-mode) .sb-scroll-pill,
+    body:not(.dark-mode) .sb-scroll-hero p,
+    body:not(.dark-mode) .sb-scroll-card span {
+      color: rgba(35,22,15,.68);
+    }
+    body:not(.dark-mode) .sb-scroll-device {
+      background: #fffaf4;
+      border-color: rgba(255, 107, 44, .42);
+    }
+    body:not(.dark-mode) .sb-scroll-screen,
+    body:not(.dark-mode) .sb-scroll-hero,
+    body:not(.dark-mode) .sb-scroll-panel,
+    body:not(.dark-mode) .sb-scroll-card {
+      background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,245,237,.62));
+      border-color: rgba(255, 107, 44, .18);
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .care-chat-launcher {
+      position: fixed;
+      right: max(18px, calc((100vw - 430px) / 2 + 18px));
+      bottom: calc(94px + env(safe-area-inset-bottom));
+      width: 58px;
+      height: 58px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      color: #160804;
+      display: grid;
+      place-items: center;
+      z-index: 90;
+      box-shadow: 0 20px 44px rgba(0,0,0,.44), 0 14px 28px rgba(255,107,44,.26);
+      cursor: pointer;
+    }
+    .care-chat-launcher svg,
+    .care-chat-send svg,
+    .care-chat-close svg {
+      width: 21px;
+      height: 21px;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .care-chat-badge {
+      position: absolute;
+      top: 9px;
+      right: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--green);
+      border: 2px solid #160804;
+    }
+    .care-chat-panel {
+      position: fixed;
+      left: 50%;
+      bottom: calc(164px + env(safe-area-inset-bottom));
+      width: min(390px, calc(100vw - 36px));
+      max-height: min(560px, calc(100dvh - 210px));
+      border: 1px solid var(--stroke);
+      border-radius: 26px;
+      background: rgba(12,12,12,.94);
+      backdrop-filter: blur(24px);
+      box-shadow: var(--shadow);
+      z-index: 89;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 16px) scale(.98);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .care-chat-panel.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0) scale(1);
+    }
+    .care-chat-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid var(--stroke);
+      background: linear-gradient(135deg, rgba(255,107,44,.18), rgba(255,255,255,.04));
+    }
+    .care-chat-kicker {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange-2);
+    }
+    .care-chat-header h2 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+    .care-chat-header p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .care-chat-close {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      cursor: pointer;
+    }
+    .care-chat-log {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 216px;
+      max-height: 318px;
+      overflow-y: auto;
+      padding: 14px;
+    }
+    .care-message {
+      max-width: 84%;
+      border-radius: 18px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      border: 1px solid var(--stroke);
+      word-wrap: break-word;
+    }
+    .care-message.bot {
+      align-self: flex-start;
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border-bottom-left-radius: 6px;
+    }
+    .care-message.user {
+      align-self: flex-end;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      color: #180803;
+      border-color: rgba(255,255,255,.2);
+      border-bottom-right-radius: 6px;
+      font-weight: 800;
+    }
+    .care-message-time {
+      display: block;
+      margin-top: 5px;
+      font-size: 10px;
+      font-weight: 800;
+      color: rgba(255,255,255,.48);
+    }
+    .care-message.user .care-message-time {
+      color: rgba(24,8,3,.58);
+    }
+    .care-chat-quick {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 0 14px 12px;
+    }
+    .care-chat-quick button {
+      min-height: 44px;
+      border: 1px solid var(--stroke);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      padding: 0 14px;
+      font-weight: 900;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .care-chat-form {
+      display: flex;
+      gap: 9px;
+      padding: 12px 14px 14px;
+      border-top: 1px solid var(--stroke);
+      background: rgba(0,0,0,.18);
+    }
+    .care-chat-input {
+      flex: 1;
+      min-width: 0;
+      min-height: 48px;
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      padding: 0 13px;
+      font: inherit;
+      outline: none;
+    }
+    .care-chat-input:focus {
+      border-color: rgba(255,107,44,.72);
+      box-shadow: 0 0 0 4px rgba(255,107,44,.14);
+    }
+    .care-chat-send {
+      width: 52px;
+      min-width: 52px;
+      min-height: 48px;
+      border: 0;
+      border-radius: 16px;
+      background: var(--orange);
+      color: #160804;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    body:not(.dark-mode) .care-chat-panel {
+      background: rgba(255,250,244,.96);
+    }
+    body:not(.dark-mode) .care-message.bot,
+    body:not(.dark-mode) .care-chat-close,
+    body:not(.dark-mode) .care-chat-quick button,
+    body:not(.dark-mode) .care-chat-input {
+      background: rgba(255,255,255,.82);
+      color: #1b120d;
+      border-color: rgba(255,107,44,.18);
+    }
+    body:not(.dark-mode) .care-message-time,
+    body:not(.dark-mode) .care-chat-header p {
+      color: rgba(35,22,15,.62);
+    }
+    @media (max-width: 430px) {
+      .care-chat-launcher {
+        bottom: calc(86px + env(safe-area-inset-bottom));
+      }
+      .care-chat-panel {
+        bottom: calc(146px + env(safe-area-inset-bottom));
+        width: min(394px, calc(100vw - 24px));
+        max-height: calc(100dvh - 176px);
+      }
+      .care-chat-log {
+        max-height: 286px;
+      }
+    }
+    @media (max-width: 768px) {
+      .sb-scroll-showcase {
+        --sb-scroll-scale: .82;
+        min-height: 680px;
+        padding-bottom: 90px;
+      }
+      .sb-scroll-device {
+        height: 500px;
+        border-width: 3px;
+      }
+      .sb-scroll-grid {
+        grid-template-columns: 1fr;
+      }
+      .sb-scroll-panel {
+        display: none;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sb-scroll-title,
+      .sb-scroll-device {
+        transform: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -3379,7 +3812,66 @@
       <button class="primary" type="button" onclick="saveFirebaseConfig()"><span>Save config</span><span></span></button>
     </section>
 
+    <section class="care-chat-panel" id="careChatPanel" aria-label="StudyBite customer care chat" aria-hidden="true">
+      <div class="care-chat-header">
+        <div>
+          <span class="care-chat-kicker">AI customer care</span>
+          <h2>StudyBite Care</h2>
+          <p id="careChatStatus">Ask about orders, payment, delivery, menu items, or request a representative.</p>
+        </div>
+        <button class="care-chat-close" type="button" onclick="toggleCareChat(false)" aria-label="Close customer care chat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+        </button>
+      </div>
+      <div class="care-chat-log" id="careChatLog" aria-live="polite"></div>
+      <div class="care-chat-quick" aria-label="Quick customer care questions">
+        <button type="button" onclick="sendCareQuick('Where is my order?')">Track my order</button>
+        <button type="button" onclick="sendCareQuick('How do I pay?')">Payment help</button>
+        <button type="button" onclick="sendCareQuick('Can I speak to a representative?')">Representative</button>
+      </div>
+      <form class="care-chat-form" onsubmit="sendCareMessage(event)">
+        <label class="sr-only" for="careChatInput">Message StudyBite Care</label>
+        <input class="care-chat-input" id="careChatInput" type="text" autocomplete="off" maxlength="360" placeholder="Ask StudyBite Care">
+        <button class="care-chat-send" type="submit" aria-label="Send message">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+        </button>
+      </form>
+    </section>
+
+    <button class="care-chat-launcher" id="careChatLauncher" type="button" onclick="toggleCareChat()" aria-label="Open customer care chat" aria-expanded="false" aria-controls="careChatPanel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
+      <span class="care-chat-badge" aria-hidden="true"></span>
+    </button>
+
     <div class="toast" id="toast"></div>
+    <section class="sb-scroll-showcase" data-sb-scroll-showcase aria-label="StudyBite scroll animation preview">
+      <div class="sb-scroll-inner">
+        <div class="sb-scroll-title">
+          <span>Customer app</span>
+          <h2>StudyBite ordering, now in motion.</h2>
+          <p>A fast menu, cart, checkout, and live order flow designed for phones, tablets, and desktop screens.</p>
+        </div>
+        <div class="sb-scroll-device">
+          <div class="sb-scroll-screen">
+            <div class="sb-scroll-top">
+              <div><i class="sb-scroll-mark"></i>StudyBite</div>
+              <div class="sb-scroll-pill">Explore Menu</div>
+            </div>
+            <div class="sb-scroll-grid">
+              <div class="sb-scroll-hero">
+                <h3>Fuel your<br><span>study flow.</span></h3>
+                <p>Everything moves with the same orange, black, and cafe style you picked, without needing extra files on GitHub.</p>
+              </div>
+              <div class="sb-scroll-panel">
+                <div class="sb-scroll-card"><strong>Menu sync</strong><span>Products come from the database.</span></div>
+                <div class="sb-scroll-card"><strong>Checkout</strong><span>Touch-friendly customer flow.</span></div>
+                <div class="sb-scroll-card"><strong>Live orders</strong><span>Orders feed back to the dashboard.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -3391,6 +3883,18 @@
       cart: 'studybite.customerCart',
       onboardingSeen: 'studybite.onboardingSeen'
     };
+
+    const STUDYBITE_FIREBASE_CONFIG = {
+      apiKey: 'AIzaSyBAbn6CxFObpnL7X-o-vZhEvAEW71QEL_s',
+      authDomain: 'studybite-f369b.firebaseapp.com',
+      databaseURL: 'https://studybite-f369b-default-rtdb.asia-southeast1.firebasedatabase.app',
+      projectId: 'studybite-f369b',
+      storageBucket: 'studybite-f369b.firebasestorage.app',
+      messagingSenderId: '754802749099',
+      appId: '1:754802749099:web:8ad094fa59d4f7208711ee',
+      measurementId: 'G-Q3LH7JE6ZE'
+    };
+    const ALLOW_FIREBASE_SETUP = new URLSearchParams(window.location.search).has('setupFirebase');
     const LOGO = 'data:image/png;base64,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';
     const FALLBACK_PRODUCTS = {
       chicken_pie: {
@@ -3459,6 +3963,9 @@
     let deliveryLocationOrderId = '';
     let activeDeliveryLocation = null;
     let cart = [];
+    let careChatOpen = false;
+    let careRepresentativeRequested = false;
+    let careChatMessages = [];
 
     function money(value) {
       return 'RM ' + Number(value || 0).toFixed(2);
@@ -3605,12 +4112,247 @@
       }
     }
 
+    function toggleCareChat(force) {
+      careChatOpen = typeof force === 'boolean' ? force : !careChatOpen;
+      const panel = document.getElementById('careChatPanel');
+      const launcher = document.getElementById('careChatLauncher');
+      if (!panel || !launcher) return;
+      panel.classList.toggle('open', careChatOpen);
+      panel.setAttribute('aria-hidden', careChatOpen ? 'false' : 'true');
+      launcher.setAttribute('aria-expanded', careChatOpen ? 'true' : 'false');
+      if (careChatOpen) {
+        ensureCareIntro();
+        window.setTimeout(() => document.getElementById('careChatInput')?.focus(), 120);
+      }
+    }
+
+    function ensureCareIntro() {
+      if (careChatMessages.length) return;
+      const name = currentUser ? getCustomerFirstName() : 'there';
+      appendCareMessage('bot', `Hi ${name}. I can help with your order, payment, delivery, menu questions, or alert a StudyBite representative.`);
+    }
+
+    function setCareStatus(message) {
+      const status = document.getElementById('careChatStatus');
+      if (status) status.textContent = message;
+    }
+
+    function formatCareTime(value) {
+      try {
+        return new Date(value || Date.now()).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      } catch {
+        return '';
+      }
+    }
+
+    function appendCareMessage(sender, text, extra = {}) {
+      careChatMessages.push({
+        sender,
+        text: String(text || '').trim(),
+        createdAt: Date.now(),
+        ...extra
+      });
+      renderCareChatMessages();
+    }
+
+    function renderCareChatMessages() {
+      const log = document.getElementById('careChatLog');
+      if (!log) return;
+      log.innerHTML = careChatMessages.map((message) => {
+        const senderClass = message.sender === 'user' ? 'user' : 'bot';
+        const label = senderClass === 'user' ? 'You' : 'StudyBite Care';
+        return `
+          <div class="care-message ${senderClass}">
+            <strong class="sr-only">${label}: </strong>${escapeHTML(message.text)}
+            <span class="care-message-time">${escapeHTML(formatCareTime(message.createdAt))}</span>
+          </div>
+        `;
+      }).join('');
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function sendCareQuick(text) {
+      const input = document.getElementById('careChatInput');
+      if (input) input.value = text;
+      sendCareMessage();
+    }
+
+    function sendCareMessage(event) {
+      if (event) event.preventDefault();
+      const input = document.getElementById('careChatInput');
+      const text = String(input?.value || '').trim();
+      if (!text) return;
+      appendCareMessage('user', text);
+      if (input) input.value = '';
+      setCareStatus('StudyBite Care is checking...');
+      window.setTimeout(() => {
+        const reply = getCareBotReply(text);
+        appendCareMessage('bot', reply.text);
+        setCareStatus(reply.status || 'Online and ready to help.');
+        if (reply.needsRepresentative) createCareRepresentativeRequest(text);
+      }, 260);
+    }
+
+    function getCareBotReply(message) {
+      const value = String(message || '').toLowerCase();
+      if (wantsCareRepresentative(value)) {
+        return {
+          needsRepresentative: true,
+          status: 'Preparing representative alert...',
+          text: 'I can do that. I will alert the StudyBite team and attach your account plus latest order details.'
+        };
+      }
+      if (/order|track|status|ready|where|late|waiting/.test(value)) {
+        const order = typeof getLatestCustomerOrder === 'function' ? getLatestCustomerOrder() : null;
+        return {
+          status: order ? 'Latest order found.' : 'No active order found.',
+          text: order ? describeCareOrder(order) : 'I do not see an active order on this device yet. Log in, place an order, or ask for a representative if you need help.'
+        };
+      }
+      if (/pay|payment|paid|cash|qr|bank|transfer|receipt|proof/.test(value)) {
+        return {
+          status: 'Payment help ready.',
+          text: 'At checkout, choose one of the live payment methods from the database. If you mark online payment as paid, StudyBite can verify it from the backend before completing the order.'
+        };
+      }
+      if (/deliver|delivery|pickup|address|location|where should i collect|collect/.test(value)) {
+        return {
+          status: 'Delivery and pickup help ready.',
+          text: 'You can choose pickup or delivery during checkout. Delivery uses your selected location, while pickup is from the StudyBite counter at UTeM Main Campus.'
+        };
+      }
+      if (/menu|food|drink|available|stock|price|cost|item|product/.test(value)) {
+        const count = products.filter((item) => item.active !== false).length;
+        return {
+          status: 'Menu synced from database.',
+          text: count ? `The menu is synced from the database right now, with ${count} active items showing. Use the menu search or categories to find food, drinks, and add-ons.` : 'The menu is waiting for database items. Please refresh in a moment, or ask for a representative if you need help ordering.'
+        };
+      }
+      if (/cancel|refund|wrong|complaint|problem|issue|missing|mistake|bad/.test(value)) {
+        return {
+          needsRepresentative: true,
+          status: 'Preparing representative alert...',
+          text: 'That sounds like something the StudyBite team should handle directly. I will alert a representative with your message.'
+        };
+      }
+      return {
+        status: 'Online and ready to help.',
+        text: 'I can help with order status, payment, pickup, delivery, menu questions, and representative requests. Tell me what you need.'
+      };
+    }
+
+    function wantsCareRepresentative(value) {
+      return /representative|represntative|human|agent|staff|support|person|operator|admin|manager|customer service|speak to someone|talk to someone|talk to a person|call me|contact me/.test(value);
+    }
+
+    function careLabel(value) {
+      return String(value || 'pending').replace(/[_-]/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+    }
+
+    function describeCareOrder(order) {
+      const receipt = order.receiptNo || order.id || activeOrderId || 'your latest order';
+      const status = careLabel(order.status || order.orderStatus || 'received');
+      const payment = careLabel(order.paymentStatus || (order.paymentMarkedPaid ? 'marked paid' : order.paymentMethod || 'pending'));
+      const amount = money(order.amount || order.total || order.grandTotal || 0);
+      const fulfillment = String(order.fulfillmentType || order.fulfillment || '').toLowerCase();
+      const handoff = fulfillment === 'delivery'
+        ? `Delivery is set for ${order.deliveryAddress || order.delivery?.label || 'your selected location'}.`
+        : 'Pickup is set for the StudyBite counter.';
+      return `Your latest order ${receipt} is currently ${status}. Payment is ${payment}, total ${amount}. ${handoff}`;
+    }
+
+    function createCareRepresentativeRequest(message) {
+      if (careRepresentativeRequested) {
+        appendCareMessage('bot', 'I already alerted the StudyBite team for this chat. You can add more details here while you wait.');
+        return;
+      }
+      if (!currentUser) {
+        appendCareMessage('bot', 'Please log in or sign up first so I can attach your contact details to the representative request. I opened the login panel for you.');
+        setCareStatus('Login needed for representative.');
+        if (typeof openAuth === 'function') openAuth();
+        return;
+      }
+      if (!db) {
+        appendCareMessage('bot', 'I cannot reach the database yet. Please refresh and try again.');
+        setCareStatus('Database is not connected.');
+        return;
+      }
+
+      const now = Date.now();
+      const id = 'care_' + now.toString(36) + '_' + Math.random().toString(36).slice(2, 8);
+      const latestOrder = typeof getLatestCustomerOrder === 'function' ? getLatestCustomerOrder() : null;
+      const customerName = getCustomerDisplayName() || 'StudyBite customer';
+      const request = {
+        id,
+        source: 'customerOrderChat',
+        status: 'open',
+        priority: 'high',
+        createdAt: now,
+        updatedAt: now,
+        customerUid: currentUser.uid || '',
+        customerName,
+        customerEmail: currentUser.email || customerProfile?.email || '',
+        customerPhone: customerProfile?.phone || latestOrder?.customerPhone || '',
+        latestOrderId: latestOrder?.id || '',
+        latestReceiptNo: latestOrder?.receiptNo || '',
+        message: String(message || '').slice(0, 600),
+        conversation: careChatMessages.slice(-12).map((item) => ({
+          sender: item.sender,
+          text: item.text,
+          createdAt: item.createdAt
+        }))
+      };
+      const alert = {
+        id,
+        title: 'Customer care request',
+        body: `${customerName} asked to speak to a representative.`,
+        type: 'customer-care',
+        source: 'customerOrderChat',
+        status: 'open',
+        createdAt: now,
+        updatedAt: now,
+        customerUid: request.customerUid,
+        customerName,
+        customerEmail: request.customerEmail,
+        customerPhone: request.customerPhone,
+        latestOrderId: request.latestOrderId,
+        latestReceiptNo: request.latestReceiptNo,
+        message: request.message,
+        conversation: request.conversation,
+        customerCareRequest: request
+      };
+
+      setCareStatus('Alerting StudyBite...');
+      db.ref('customerCareRequests/' + id).set(request)
+        .then(() => {
+          careRepresentativeRequested = true;
+          appendCareMessage('bot', 'Done. I alerted the StudyBite team in the database. A representative can use your account and order details to follow up.');
+          setCareStatus('Representative alerted.');
+          toast('Representative request sent');
+          db.ref('customerCareAlerts/' + id).set(alert).catch(() => {});
+          db.ref('notifications/' + id).set(alert).catch(() => {});
+        })
+        .catch(() => {
+          db.ref('notifications/' + id).set(alert)
+            .then(() => {
+              careRepresentativeRequested = true;
+              appendCareMessage('bot', 'Done. I alerted the StudyBite team in the database alerts. A representative can use your account and order details to follow up.');
+              setCareStatus('Representative alerted.');
+              toast('Representative request sent');
+            })
+            .catch(() => {
+              appendCareMessage('bot', 'I could not send the representative alert yet. Please try again in a moment.');
+              setCareStatus('Representative alert failed.');
+            });
+        });
+    }
+
     function getFirebaseConfig() {
       try {
         const saved = localStorage.getItem(STORAGE_KEYS.config);
-        return saved ? JSON.parse(saved) : null;
+        return sanitizeFirebaseWebConfig(saved ? JSON.parse(saved) : STUDYBITE_FIREBASE_CONFIG);
       } catch {
-        return null;
+        return sanitizeFirebaseWebConfig(STUDYBITE_FIREBASE_CONFIG);
       }
     }
 
@@ -3645,7 +4387,7 @@
     function initFirebase() {
       const config = getFirebaseConfig();
       if (!config) {
-        document.getElementById('setupDrawer').classList.add('active');
+        if (ALLOW_FIREBASE_SETUP) document.getElementById('setupDrawer').classList.add('active');
         renderFallbackMenu();
         renderFallbackPaymentOptions();
         return;
@@ -3658,9 +4400,13 @@
         listenProducts();
         listenPaymentOptions();
       } catch (error) {
-        document.getElementById('setupDrawer').classList.add('active');
-        document.getElementById('setupStatus').textContent = 'Could not connect Firebase. Check the config.';
-        document.getElementById('setupStatus').className = 'status error';
+        if (ALLOW_FIREBASE_SETUP) {
+          document.getElementById('setupDrawer').classList.add('active');
+          document.getElementById('setupStatus').textContent = 'Could not connect Firebase. Check the config.';
+          document.getElementById('setupStatus').className = 'status error';
+        } else {
+          toast('StudyBite is connecting. Please refresh if it takes too long.');
+        }
         renderFallbackMenu();
         renderFallbackPaymentOptions();
       }
@@ -4802,7 +5548,8 @@
 
     function submitAuth() {
       if (!auth || !db) {
-        document.getElementById('setupDrawer').classList.add('active');
+        toast('StudyBite is still connecting. Please try again in a moment.');
+        initFirebase();
         return;
       }
       authMode === 'login' ? loginCustomer() : signupCustomer();
@@ -5240,5 +5987,32 @@
     maybeShowOnboarding();
     renderCartCount();
   </script>
+<script>
+(function(){
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) return;
+  var ticking = false;
+  function clamp(v,min,max){ return Math.min(max, Math.max(min, v)); }
+  function update(){
+    var view = window.innerHeight || document.documentElement.clientHeight;
+    var mobile = window.innerWidth <= 768;
+    document.querySelectorAll('[data-sb-scroll-showcase]').forEach(function(el){
+      var rect = el.getBoundingClientRect();
+      var progress = clamp((view - rect.top) / (view + rect.height), 0, 1);
+      var startScale = mobile ? 0.7 : 1.05;
+      var endScale = mobile ? 0.9 : 1;
+      var scale = startScale + ((endScale - startScale) * progress);
+      el.style.setProperty('--sb-scroll-rotate', (20 - (20 * progress)).toFixed(2) + 'deg');
+      el.style.setProperty('--sb-scroll-scale', scale.toFixed(3));
+      el.style.setProperty('--sb-scroll-translate', (-100 * progress).toFixed(1) + 'px');
+    });
+    ticking = false;
+  }
+  function requestUpdate(){ if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate, { passive: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', update, { once: true }); else update();
+})();
+</script>
 </body>
 </html>
