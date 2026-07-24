@@ -132,6 +132,16 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
     }
 
+    .circle-btn.is-favorite {
+      color: var(--orange);
+      border-color: var(--orange);
+      transition: transform 0.18s ease;
+    }
+
+    .circle-btn.is-favorite:active {
+      transform: scale(0.9);
+    }
+
     .avatar-btn {
       border-radius: 50%;
       position: relative;
@@ -2911,180 +2921,6 @@
         transition-duration: .12s !important;
       }
     }
-    /* StudyBite scroll container animation - static GitHub-ready version of the requested shadcn/framer component. */
-    .sb-scroll-showcase {
-      --sb-scroll-rotate: 20deg;
-      --sb-scroll-scale: 1.05;
-      --sb-scroll-translate: 0px;
-      min-height: clamp(620px, 92vh, 900px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(28px, 6vw, 80px) clamp(14px, 4vw, 52px);
-      overflow: hidden;
-      position: relative;
-      isolation: isolate;
-    }
-    .sb-scroll-showcase::before {
-      content: "";
-      position: absolute;
-      inset: 12%;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(255, 107, 44, .24), transparent 60%);
-      filter: blur(18px);
-      z-index: -1;
-    }
-    .sb-scroll-inner {
-      width: min(1060px, 100%);
-      perspective: 1000px;
-    }
-    .sb-scroll-title {
-      max-width: 780px;
-      margin: 0 auto 34px;
-      text-align: center;
-      transform: translateY(var(--sb-scroll-translate));
-      will-change: transform;
-    }
-    .sb-scroll-title span {
-      color: #ff6b2c;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    .sb-scroll-title h2 {
-      margin: 10px 0 12px;
-      color: var(--text, #fff7ef);
-      font-size: clamp(34px, 7vw, 78px);
-      line-height: .96;
-      font-weight: 950;
-      letter-spacing: 0;
-    }
-    .sb-scroll-title p {
-      margin: 0 auto;
-      max-width: 640px;
-      color: var(--muted, rgba(255, 247, 239, .72));
-      font-weight: 700;
-      line-height: 1.55;
-    }
-    .sb-scroll-device {
-      width: min(1040px, 100%);
-      height: clamp(410px, 54vw, 620px);
-      margin: 0 auto;
-      padding: clamp(8px, 1.8vw, 22px);
-      border: 4px solid rgba(108, 108, 108, .92);
-      border-radius: 30px;
-      background: #222;
-      transform: rotateX(var(--sb-scroll-rotate)) scale(var(--sb-scroll-scale));
-      transform-origin: top center;
-      box-shadow: 0 9px 20px rgba(0,0,0,.29), 0 37px 37px rgba(0,0,0,.26), 0 84px 50px rgba(0,0,0,.15);
-      will-change: transform;
-    }
-    .sb-scroll-screen {
-      height: 100%;
-      overflow: hidden;
-      border-radius: 22px;
-      border: 1px solid rgba(255, 107, 44, .28);
-      background: linear-gradient(135deg, rgba(255,255,255,.12), transparent 28%), radial-gradient(circle at 86% 18%, rgba(255, 107, 44, .32), transparent 24%), rgba(5, 5, 5, .92);
-    }
-    .sb-scroll-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: clamp(14px, 2vw, 22px);
-      color: #fff7ef;
-      font-weight: 900;
-    }
-    .sb-scroll-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      display: inline-block;
-      background: linear-gradient(135deg, #ff6b2c, #ff2f1f);
-      box-shadow: 0 12px 34px rgba(255, 107, 44, .38);
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-    .sb-scroll-pill {
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 999px;
-      color: rgba(255,247,239,.78);
-      font-size: 12px;
-    }
-    .sb-scroll-grid {
-      height: calc(100% - 70px);
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: clamp(14px, 2.4vw, 26px);
-      padding: 0 clamp(14px, 2vw, 22px) clamp(16px, 2vw, 22px);
-    }
-    .sb-scroll-hero,
-    .sb-scroll-panel,
-    .sb-scroll-card {
-      border: 1px solid rgba(255,255,255,.14);
-      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.04));
-      border-radius: 24px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
-    }
-    .sb-scroll-hero {
-      display: grid;
-      align-content: end;
-      padding: clamp(18px, 3vw, 34px);
-    }
-    .sb-scroll-hero h3 {
-      margin: 0;
-      color: #fff7ef;
-      font-size: clamp(32px, 5vw, 64px);
-      line-height: .95;
-      font-weight: 950;
-    }
-    .sb-scroll-hero h3 span,
-    .sb-scroll-card strong {
-      color: #ff6b2c;
-    }
-    .sb-scroll-hero p,
-    .sb-scroll-card span {
-      color: rgba(255,247,239,.74);
-      font-weight: 700;
-      line-height: 1.45;
-    }
-    .sb-scroll-panel {
-      display: grid;
-      gap: 12px;
-      padding: clamp(14px, 2vw, 22px);
-    }
-    .sb-scroll-card {
-      padding: 16px;
-    }
-    .sb-scroll-card strong {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-    body:not(.dark-mode) .sb-scroll-title h2,
-    body:not(.dark-mode) .sb-scroll-top,
-    body:not(.dark-mode) .sb-scroll-hero h3 {
-      color: #1b120d;
-    }
-    body:not(.dark-mode) .sb-scroll-title p,
-    body:not(.dark-mode) .sb-scroll-pill,
-    body:not(.dark-mode) .sb-scroll-hero p,
-    body:not(.dark-mode) .sb-scroll-card span {
-      color: rgba(35,22,15,.68);
-    }
-    body:not(.dark-mode) .sb-scroll-device {
-      background: #fffaf4;
-      border-color: rgba(255, 107, 44, .42);
-    }
-    body:not(.dark-mode) .sb-scroll-screen,
-    body:not(.dark-mode) .sb-scroll-hero,
-    body:not(.dark-mode) .sb-scroll-panel,
-    body:not(.dark-mode) .sb-scroll-card {
-      background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,245,237,.62));
-      border-color: rgba(255, 107, 44, .18);
-    }
     .sr-only {
       position: absolute;
       width: 1px;
@@ -3321,29 +3157,6 @@
         max-height: 286px;
       }
     }
-    @media (max-width: 768px) {
-      .sb-scroll-showcase {
-        --sb-scroll-scale: .82;
-        min-height: 680px;
-        padding-bottom: 90px;
-      }
-      .sb-scroll-device {
-        height: 500px;
-        border-width: 3px;
-      }
-      .sb-scroll-grid {
-        grid-template-columns: 1fr;
-      }
-      .sb-scroll-panel {
-        display: none;
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .sb-scroll-title,
-      .sb-scroll-device {
-        transform: none !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -3384,7 +3197,7 @@
 
         <label class="search" for="searchInput">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <input id="searchInput" type="search" placeholder="Search your favorite food" oninput="renderMenu()">
+          <input id="searchInput" type="search" placeholder="Search your favorite food" oninput="handleSearchInput()">
           <button class="filter-btn" type="button" aria-label="Show all categories" onclick="selectCategory('all')">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M8 5v4M16 15v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </button>
@@ -3844,34 +3657,6 @@
     </button>
 
     <div class="toast" id="toast"></div>
-    <section class="sb-scroll-showcase" data-sb-scroll-showcase aria-label="StudyBite scroll animation preview">
-      <div class="sb-scroll-inner">
-        <div class="sb-scroll-title">
-          <span>Customer app</span>
-          <h2>StudyBite ordering, now in motion.</h2>
-          <p>A fast menu, cart, checkout, and live order flow designed for phones, tablets, and desktop screens.</p>
-        </div>
-        <div class="sb-scroll-device">
-          <div class="sb-scroll-screen">
-            <div class="sb-scroll-top">
-              <div><i class="sb-scroll-mark"></i>StudyBite</div>
-              <div class="sb-scroll-pill">Explore Menu</div>
-            </div>
-            <div class="sb-scroll-grid">
-              <div class="sb-scroll-hero">
-                <h3>Fuel your<br><span>study flow.</span></h3>
-                <p>Everything moves with the same orange, black, and cafe style you picked, without needing extra files on GitHub.</p>
-              </div>
-              <div class="sb-scroll-panel">
-                <div class="sb-scroll-card"><strong>Menu sync</strong><span>Products come from the database.</span></div>
-                <div class="sb-scroll-card"><strong>Checkout</strong><span>Touch-friendly customer flow.</span></div>
-                <div class="sb-scroll-card"><strong>Live orders</strong><span>Orders feed back to the dashboard.</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -3881,7 +3666,8 @@
     const STORAGE_KEYS = {
       config: 'studybite.firebaseConfig',
       cart: 'studybite.customerCart',
-      onboardingSeen: 'studybite.onboardingSeen'
+      onboardingSeen: 'studybite.onboardingSeen',
+      favorites: 'studybite.favorites'
     };
 
     const STUDYBITE_FIREBASE_CONFIG = {
@@ -3963,6 +3749,7 @@
     let deliveryLocationOrderId = '';
     let activeDeliveryLocation = null;
     let cart = [];
+    let favoriteIds = loadFavorites();
     let careChatOpen = false;
     let careRepresentativeRequested = false;
     let careChatMessages = [];
@@ -4071,6 +3858,37 @@
         localStorage.removeItem(STORAGE_KEYS.cart);
       }
       renderCartCount();
+    }
+
+    function loadFavorites() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEYS.favorites) || '[]');
+        return Array.isArray(saved) ? saved.map(String) : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveFavorites() {
+      localStorage.setItem(STORAGE_KEYS.favorites, JSON.stringify(favoriteIds));
+    }
+
+    function isFavorite(id) {
+      return favoriteIds.includes(String(id));
+    }
+
+    function toggleFavorite(id) {
+      id = String(id);
+      if (favoriteIds.includes(id)) {
+        favoriteIds = favoriteIds.filter((favId) => favId !== id);
+      } else {
+        favoriteIds.push(id);
+      }
+      saveFavorites();
+      document.querySelectorAll(`[data-favorite-id="${id}"]`).forEach((button) => {
+        button.classList.toggle('is-favorite', isFavorite(id));
+        button.setAttribute('aria-pressed', isFavorite(id) ? 'true' : 'false');
+      });
     }
 
     function mergeCartItems(savedCart, guestCart) {
@@ -4873,8 +4691,14 @@
           <div class="promo-title">${escapeHTML(promo.name).split(' ').slice(0, 2).join(' ')} <span>${escapeHTML(promo.category || 'Menu')}</span></div>
           <button type="button" onclick="openDetail('${escapeHTML(promo.id)}')">Order Now</button>
         </div>
-        <div class="promo-art"><img src="${escapeHTML(productImage(promo))}" alt="${escapeHTML(promo.name)}" onerror="this.src='${LOGO}'"></div>
+        <div class="promo-art"><img src="${escapeHTML(productImage(promo))}" alt="${escapeHTML(promo.name)}" loading="lazy" onerror="this.src='${LOGO}'"></div>
       `;
+    }
+
+    let searchDebounceTimer = null;
+    function handleSearchInput() {
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(renderMenu, 250);
     }
 
     function renderMenu() {
@@ -4888,7 +4712,7 @@
       document.getElementById('menuCount').textContent = `${items.length} item${items.length === 1 ? '' : 's'}`;
       document.getElementById('menuGrid').innerHTML = items.length ? items.map((item) => `
         <button class="card" type="button" onclick="openDetail('${escapeHTML(item.id)}')">
-          <div class="thumb"><img src="${escapeHTML(productImage(item))}" alt="${escapeHTML(item.name)}" onerror="this.src='${LOGO}';this.className='fallback-logo'"></div>
+          <div class="thumb"><img src="${escapeHTML(productImage(item))}" alt="${escapeHTML(item.name)}" loading="lazy" onerror="this.src='${LOGO}';this.className='fallback-logo'"></div>
           ${item.promoText ? `<span class="tag">${escapeHTML(item.promoText)}</span>` : ''}
           <h3>${escapeHTML(item.name)}</h3>
           <div class="price-row">
@@ -4912,7 +4736,7 @@
         <div class="detail-gallery" id="detailGallery" onscroll="syncDetailGalleryDots()">
           ${galleryImages.map((src) => `
             <div class="detail-slide">
-              <img src="${escapeHTML(src)}" alt="${escapeHTML(currentDetail.name)}" onerror="this.src='${LOGO}';this.style.objectFit='contain';this.style.padding='90px';">
+              <img src="${escapeHTML(src)}" alt="${escapeHTML(currentDetail.name)}" loading="lazy" onerror="this.src='${LOGO}';this.style.objectFit='contain';this.style.padding='90px';">
             </div>
           `).join('')}
         </div>
@@ -4920,7 +4744,7 @@
           <button class="circle-btn" type="button" onclick="closeDetail()" aria-label="Back">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <button class="circle-btn" type="button" aria-label="Favorite">
+          <button class="circle-btn${isFavorite(currentDetail.id) ? ' is-favorite' : ''}" type="button" data-favorite-id="${escapeHTML(currentDetail.id)}" onclick="toggleFavorite('${escapeHTML(currentDetail.id)}')" aria-label="Favorite" aria-pressed="${isFavorite(currentDetail.id) ? 'true' : 'false'}">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" fill="currentColor"/></svg>
           </button>
         </div>
@@ -5098,7 +4922,7 @@
       }
       list.innerHTML = cart.map((item, index) => `
         <div class="cart-item">
-          <img src="${escapeHTML(productImage(item))}" alt="${escapeHTML(item.name)}" onerror="this.src='${LOGO}'">
+          <img src="${escapeHTML(productImage(item))}" alt="${escapeHTML(item.name)}" loading="lazy" onerror="this.src='${LOGO}'">
           <div>
             <h3>${escapeHTML(item.name)}</h3>
             <p>${item.qty} x ${money(item.price)}</p>
@@ -5136,7 +4960,7 @@
       setFulfillmentType(fulfillmentType, false);
       document.getElementById('checkoutItems').innerHTML = cart.map((item) => `
         <div class="cart-item">
-          <img src="${escapeHTML(productImage(item))}" alt="${escapeHTML(item.name)}" onerror="this.src='${LOGO}'">
+          <img src="${escapeHTML(productImage(item))}" alt="${escapeHTML(item.name)}" loading="lazy" onerror="this.src='${LOGO}'">
           <div>
             <h3>${escapeHTML(item.name)}</h3>
             <p>${item.qty} x ${money(item.price)}</p>
@@ -5987,32 +5811,5 @@
     maybeShowOnboarding();
     renderCartCount();
   </script>
-<script>
-(function(){
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced) return;
-  var ticking = false;
-  function clamp(v,min,max){ return Math.min(max, Math.max(min, v)); }
-  function update(){
-    var view = window.innerHeight || document.documentElement.clientHeight;
-    var mobile = window.innerWidth <= 768;
-    document.querySelectorAll('[data-sb-scroll-showcase]').forEach(function(el){
-      var rect = el.getBoundingClientRect();
-      var progress = clamp((view - rect.top) / (view + rect.height), 0, 1);
-      var startScale = mobile ? 0.7 : 1.05;
-      var endScale = mobile ? 0.9 : 1;
-      var scale = startScale + ((endScale - startScale) * progress);
-      el.style.setProperty('--sb-scroll-rotate', (20 - (20 * progress)).toFixed(2) + 'deg');
-      el.style.setProperty('--sb-scroll-scale', scale.toFixed(3));
-      el.style.setProperty('--sb-scroll-translate', (-100 * progress).toFixed(1) + 'px');
-    });
-    ticking = false;
-  }
-  function requestUpdate(){ if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
-  window.addEventListener('scroll', requestUpdate, { passive: true });
-  window.addEventListener('resize', requestUpdate, { passive: true });
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', update, { once: true }); else update();
-})();
-</script>
 </body>
 </html>
